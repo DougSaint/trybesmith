@@ -8,7 +8,7 @@ type Response = {
 };
 
 const generateToken = (name: string): string =>
-jwt.sign({ name }, process.env.JWT_SECRET as string, { expiresIn: '1h' });
+  jwt.sign({ name }, process.env.JWT_SECRET as string, { expiresIn: '1h' });
 
 const login = async (name: string, password: string): Promise<Response> => {
   const user = await UserModel.findOne({ where: { username: name } });
