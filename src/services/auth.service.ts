@@ -7,6 +7,7 @@ type Response = {
   message: string;
 };
 
+
 const generateToken = (name: string): string =>
   jwt.sign({ name }, process.env.JWT_SECRET as string, { expiresIn: '1h' });
 
